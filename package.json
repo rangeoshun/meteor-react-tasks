@@ -1,0 +1,22 @@
+{
+  "name": "meteor-react",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "formsy-react": "^0.19.5",
+    "jss": "^8.1.0",
+    "material-ui": "^1.0.0-beta.11",
+    "meteor-node-stubs": "~0.2.4",
+    "react": "^15.6.1",
+    "react-addons-pure-render-mixin": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-jss": "^7.1.0",
+    "react-redux-meteor": "^4.5.1",
+    "react-redux-meteor-data": "^0.5.8",
+    "redux": "^3.7.2",
+    "uuid": "^3.1.0"
+  }
+}
