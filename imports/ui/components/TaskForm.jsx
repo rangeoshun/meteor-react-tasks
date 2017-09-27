@@ -8,6 +8,10 @@ import withTaskForm from "../containers/withTaskForm"
 import withTaskFormActions from "../containers/withTaskFormActions"
 import withTaskActions from "../containers/withTaskActions"
 
+const inputStyle = {
+	width: "100%"
+}
+
 class TaskForm extends Component {
 	addTask() {
 		const { addTask, taskForm } = this.props
@@ -42,6 +46,7 @@ class TaskForm extends Component {
 				<TaskInput
 					name="text"
 					value={taskForm.text}
+					style={inputStyle}
 					onValidSubmit={() => this.addTask()}
 				/>
 			</Form>
