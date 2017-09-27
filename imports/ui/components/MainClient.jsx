@@ -11,10 +11,10 @@ import { create } from "jss"
 import preset from "jss-preset-default"
 
 import App from "./App"
-
+import Empty from "./Empty"
 import theme from "/imports/ui/styles/theme"
 
-class MainClient extends React.Component {
+class Main extends React.Component {
 	// Remove the server-side injected CSS.
 	componentDidMount() {
 		const jssStyles = document.getElementById("jss-server-side")
@@ -24,14 +24,17 @@ class MainClient extends React.Component {
 	}
 
 	render() {
-		return (
-			<div>
-				<MuiThemeProvider theme={theme}>
-					<App {...this.props} />
-				</MuiThemeProvider>
-			</div>
-		)
+		return <App {...this.props} />
 	}
 }
+
+const MainClient = () => (
+	<div>
+		<Empty />
+		<MuiThemeProvider theme={theme}>
+			<Main />
+		</MuiThemeProvider>
+	</div>
+)
 
 export default MainClient

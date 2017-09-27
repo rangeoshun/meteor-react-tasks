@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 
 import { MuiThemeProvider } from "material-ui/styles"
 import createGenerateClassName from "material-ui/styles/createGenerateClassName"
-
+import { sheetsManager } from "material-ui/styles"
 import JssProvider from "react-jss/lib/JssProvider"
 import { SheetsRegistry } from "react-jss/lib/jss"
 import { create } from "jss"

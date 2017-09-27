@@ -19,6 +19,10 @@ import {
 
 import Tasks from "/imports/api/tasks"
 
+if (Meteor.isServer) {
+	Meteor.subscribe = () => ({ ready: () => false })
+}
+
 export const loadTasks = () =>
 	startSubscription({
 		key: TASKS_SUB,

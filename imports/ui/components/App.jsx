@@ -13,6 +13,18 @@ import NotFound from "./NotFound"
 const App = ({ url }) => (
 	<div>
 		<Provider store={store}>
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route exact path="*" component={NotFound} />
+			</Switch>
+		</Provider>
+	</div>
+)
+
+/*
+const App = ({ url }) => (
+	<div>
+		<Provider store={store}>
 			<Router history={createBrowserHistory()}>
 				<Switch>
 					<Route exact path="/" component={Home} />
@@ -22,5 +34,6 @@ const App = ({ url }) => (
 		</Provider>
 	</div>
 )
+*/
 
 export default App
