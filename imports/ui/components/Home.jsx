@@ -1,12 +1,11 @@
-import React, { Component, PropTypes } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from "react"
+import ReactDOM from "react-dom"
+import Grid from "material-ui/Grid"
+import Paper from "material-ui/Paper"
+import Card, { CardActions, CardContent } from "material-ui/Card"
 
-import Grid from 'material-ui/Grid'
-import Paper from 'material-ui/Paper'
-import Card, { CardActions, CardContent } from 'material-ui/Card'
-
-import TaskList from './TaskList'
-import TaskForm from './TaskForm'
+import TaskList from "./TaskList"
+import TaskForm from "./TaskForm"
 
 // App component - represents the whole app
 const App = () => (

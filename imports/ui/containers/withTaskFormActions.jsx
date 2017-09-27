@@ -1,8 +1,8 @@
-import React from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import React from "react"
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
 
-import * as actions from '../actions/tasks'
+import * as actions from "../../actions/task-form"
 
 const HOC = EnhancedComponent =>
 	connect(() => ({}), mapDispatchToProps)(({ ...props }) => (

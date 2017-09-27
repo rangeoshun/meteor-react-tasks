@@ -1,13 +1,12 @@
-import React, { Component, PropTypes } from 'react'
-import { bindActionCreators } from 'redux'
+import React, { Component, PropTypes } from "react"
+import { bindActionCreators } from "redux"
+import { Form } from "formsy-react"
 
-import { Form } from 'formsy-react'
+import TaskInput from "./TaskInput"
 
-import TaskInput from './TaskInput'
-
-import withTaskForm from '../containers/withTaskForm'
-import withTaskFormActions from '../containers/withTaskFormActions'
-import withTaskActions from '../containers/withTaskActions'
+import withTaskForm from "../containers/withTaskForm"
+import withTaskFormActions from "../containers/withTaskFormActions"
+import withTaskActions from "../containers/withTaskActions"
 
 class TaskForm extends Component {
 	addTask() {
@@ -32,7 +31,7 @@ class TaskForm extends Component {
 	}
 
 	render() {
-		const { taskForm } = this.props
+		const { taskForm = {} } = this.props
 
 		return (
 			<Form

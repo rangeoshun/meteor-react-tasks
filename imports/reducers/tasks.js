@@ -1,13 +1,31 @@
+import { STOP_SUBSCRIPTION } from "meteor-redux-middlewares"
+
 import {
-	ADD_TASK,
-	REMOVE_TASK,
-	CHECK_TASK,
-	UNCHECK_TASK,
-	SET_TASKS
-} from '../constants/actions'
+	TASKS_SUBSCRIPTION_READY,
+	TASKS_SUBSCRIPTION_CHANGED
+} from "/imports/constants/actions"
+import { TASKS_SUB } from "/imports/constants/collections"
 
-import mapReducer from './map-reducer'
+import mapReducer from "./map-reducer"
 
-const tasks = {}
+const initialState = {
+	ready: false,
+	list: []
+}
 
-export default mapReducer(tasks)
+const tasks = {
+	[TASKS_SUBSCRIPTION_READY]: (state = initialState, { payload }) => ({
+		...state,
+		ready: true
+	}),
+	[TASKS_SUBSCRIPTION_CHANGED]: (state = initialState, { payload }) => ({
+		...state,
+		list: payload
+	}),
+	[STOP_SUBSCRIPTION]: (state = initialState, { payload }) =>
+		payload === TASKS_SUB
+			? { ...state, tasksSubscriptionStopped: true }
+			: { state }
+}
+
+export default mapReducer(tasks, initialState)

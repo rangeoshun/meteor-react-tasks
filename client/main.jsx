@@ -1,16 +1,9 @@
-import React from 'react'
-import { Meteor } from 'meteor/meteor'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux-meteor'
+import React from "react"
+import { Meteor } from "meteor/meteor"
+import { render } from "react-dom"
 
-import store from '../imports/state/state'
-import App from '../imports/components/App'
+import MainClient from "/imports/ui/components/MainClient"
 
 Meteor.startup(() => {
-	render(
-		<Provider store={store}>
-			<App />
-		</Provider>,
-		document.getElementById('render-target')
-	)
+	render(<MainClient />, document.getElementById("react"))
 })

@@ -1,3 +1,7 @@
-import { Mongo } from 'meteor/mongo'
+import { Mongo } from "meteor/mongo"
 
-export const Tasks = new Mongo.Collection('tasks')
+import { TASKS_COLLECTION } from "/imports/constants/collections"
+
+const Tasks = new Mongo.Collection(TASKS_COLLECTION)
+
+export default Tasks
