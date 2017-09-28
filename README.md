@@ -2,13 +2,17 @@
 
 https://www.meteor.com/install
 
-# Checkout repo
+# Checkout repo and install dependencies
 
-`$ git clone https://github.com/rangeoshun/meteor-react-tasks.git .`
+```bash
+$ git clone https://github.com/rangeoshun/meteor-react-tasks.git
+$ cd meteor-react-tasks
+$ npm i
+```
 
 # Start the app
 
-`$ meteor`
+`$ npm start`
 
 # Access UI
 
