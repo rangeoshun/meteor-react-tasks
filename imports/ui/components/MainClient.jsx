@@ -15,26 +15,27 @@ import Empty from "./Empty"
 import theme from "/imports/ui/styles/theme"
 
 class Main extends React.Component {
-	// Remove the server-side injected CSS.
-	componentDidMount() {
-		const jssStyles = document.getElementById("jss-server-side")
-		if (!jssStyles || !jssStyles.parentNode) return
+  // Remove the server-side injected CSS.
+  componentDidMount() {
+    const jssStyles = document.getElementById("jss-server-side")
+    if (!jssStyles || !jssStyles.parentNode) return
 
-		jssStyles.parentNode.removeChild(jssStyles)
-	}
+    jssStyles.parentNode.removeChild(jssStyles)
+  }
 
-	render() {
-		return <App {...this.props} />
-	}
+  render() {
+    return <App {...this.props} />
+  }
 }
 
 const MainClient = () => (
-	<div>
-		<Empty />
-		<MuiThemeProvider theme={theme}>
-			<Main />
-		</MuiThemeProvider>
-	</div>
+  <div>
+    <Empty />
+    <MuiThemeProvider theme={theme}>
+      <Main />
+    </MuiThemeProvider>
+    <style id="jss-server-side" />
+  </div>
 )
 
 export default MainClient

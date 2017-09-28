@@ -5,10 +5,10 @@ import mapReducer from "./map-reducer"
 const initialState = { text: "" }
 
 const taskForm = {
-	[CHANGE_TASK_INPUT_VALUE]: (state = initialState, { text = "" }) => ({
-		...state,
-		text: text.trim()
-	})
+  [CHANGE_TASK_INPUT_VALUE]: (state = initialState, { text = "" }) => ({
+    ...state,
+    text
+  })
 }
 
 export default mapReducer(taskForm, initialState)

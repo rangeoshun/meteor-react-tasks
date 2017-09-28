@@ -15,41 +15,39 @@ import App from "./App"
 import theme from "/imports/ui/styles/theme"
 
 const HTMLComponent = ({ url, sheetsRegistry, jss, generateClassName }) => (
-	<JssProvider
-		registry={sheetsRegistry}
-		jss={jss}
-		generateClassName={generateClassName}
-	>
-		<MuiThemeProvider theme={theme} sheetsManager={new Map()}>
-			<App url={url} />
-		</MuiThemeProvider>
-	</JssProvider>
+  <JssProvider
+    registry={sheetsRegistry}
+    jss={jss}
+    generateClassName={generateClassName}
+  >
+    <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
+      <App url={url} />
+    </MuiThemeProvider>
+  </JssProvider>
 )
 
 const CSSComponent = ({ sheetsRegistry }) => (
-	<style
-		id="jss-server-side"
-		dangerouslySetInnerHTML={{ __html: sheetsRegistry.toString() }}
-	/>
+  <style
+    id="jss-server-side"
+    dangerouslySetInnerHTML={{ __html: sheetsRegistry.toString() }}
+  />
 )
 
 const MainServer = ({ url }) => {
-	const sheetsRegistry = new SheetsRegistry()
-	const jss = create(preset())
-	const generateClassName = createGenerateClassName()
+  const sheetsRegistry = new SheetsRegistry()
+  const jss = create(preset())
+  const generateClassName = createGenerateClassName()
 
-	return (
-		<div>
-			<Helmet>
-				<title>Todo List</title>
-				<link rel="stylesheet" type="text/css" src="/styles/main.css" />
-			</Helmet>
-			<HTMLComponent
-				{...{ url, sheetsRegistry, jss, generateClassName }}
-			/>
-			<CSSComponent {...{ sheetsRegistry }} />
-		</div>
-	)
+  return (
+    <div>
+      <Helmet>
+        <title>Todo List</title>
+        <link rel="stylesheet" type="text/css" src="/styles/main.css" />
+      </Helmet>
+      <HTMLComponent {...{ url, sheetsRegistry, jss, generateClassName }} />
+      <CSSComponent {...{ sheetsRegistry }} />
+    </div>
+  )
 }
 
 export default MainServer

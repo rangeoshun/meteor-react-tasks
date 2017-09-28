@@ -9,17 +9,17 @@ import TaskForm from "./TaskForm"
 
 // App component - represents the whole app
 const App = () => (
-	<Grid container spacing={24}>
-		<Grid item xs={12} sm={6} lg={4} className="container">
-			<Paper>
-				<header>
-					<h1>Todo List</h1>
-					<TaskForm />
-				</header>
-				<TaskList />
-			</Paper>
-		</Grid>
-	</Grid>
+  <Grid container spacing={24}>
+    <Grid item xs={12} sm={6} lg={4} className="container">
+      <Paper>
+        <header>
+          <h1>Todo List</h1>
+          <TaskForm />
+        </header>
+        <TaskList />
+      </Paper>
+    </Grid>
+  </Grid>
 )
 
 export default App

@@ -8,8 +8,8 @@ import MainClient from "/imports/ui/components/MainClient"
 import appReducers from "/imports/reducers"
 
 createRouter({
-	MainApp: MainClient,
-	appReducers
+  MainApp: MainClient,
+  appReducers
 })
 
 /*
