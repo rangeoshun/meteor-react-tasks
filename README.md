@@ -12,7 +12,11 @@ $ npm i
 
 # Start the app
 
-`$ npm start`
+With `npm start` you'll have `NODE_ENV` set to `developement` with `cross-env` and `meteor run` started for you.
+
+```bash
+$ npm start
+```
 
 # Access UI
 
