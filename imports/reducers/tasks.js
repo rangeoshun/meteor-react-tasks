@@ -6,7 +6,7 @@ import {
 } from "/imports/constants/actions"
 import { TASKS_SUB } from "/imports/constants/collections"
 
-import mapReducer from "./map-reducer"
+import mapReducer from "./mapReducer"
 
 const initialState = {
 	ready: false,
